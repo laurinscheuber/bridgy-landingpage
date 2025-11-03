@@ -757,6 +757,36 @@ h1, h2, h3 {
     }
 }
 
+/* FAQ Section */
+.faq {
+    padding: 8rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.faq-item {
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.faq-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
