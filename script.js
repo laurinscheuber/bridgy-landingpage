@@ -7,14 +7,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const parallaxElements = document.querySelectorAll('[data-parallax]');
         const tiltElements = document.querySelectorAll('[data-tilt]');
         
+        // Cache element data to prevent repeated DOM reads
+        const parallaxData = Array.from(parallaxElements).map(element => ({
+            element,
+            speed: parseFloat(element.dataset.parallax) || 0.5
+        }));
+        
+        let ticking = false;
+        
         function updateParallax() {
             const scrollTop = window.pageYOffset;
             const windowHeight = window.innerHeight;
             
-            parallaxElements.forEach((element) => {
-                const elementTop = element.offsetTop;
-                const elementHeight = element.offsetHeight;
-                const speed = parseFloat(element.dataset.parallax) || 0.5;
+            parallaxData.forEach(({ element, speed }) => {
+                const rect = element.getBoundingClientRect();
+                const elementTop = rect.top + scrollTop;
+                const elementHeight = rect.height;
                 
                 // Check if element is in viewport
                 if (elementTop < scrollTop + windowHeight && elementTop + elementHeight > scrollTop) {
@@ -22,19 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     element.style.transform = `translateY(${yPos}px)`;
                 }
             });
+            
+            ticking = false;
         }
         
-        // Throttled scroll event
-        let ticking = false;
         function requestTick() {
             if (!ticking) {
-                requestAnimationFrame(updateParallax);
                 ticking = true;
-                setTimeout(() => { ticking = false; }, 16);
+                requestAnimationFrame(updateParallax);
             }
         }
         
-        window.addEventListener('scroll', requestTick);
+        window.addEventListener('scroll', requestTick, { passive: true });
         updateParallax(); // Initial call
     }
     
@@ -206,18 +213,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     }
     
-    // Gradient background animation
-    function animateBackground() {
-        let angle = 135;
-        const body = document.body;
-        
-        setInterval(() => {
-            angle += 0.5;
-            if (angle >= 360) angle = 0;
-            
-            body.style.background = `linear-gradient(${angle}deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #7c3aed 100%)`;
-        }, 100);
-    }
     
     // Simple fade-in effect for title
     function addTitleAnimation() {
@@ -244,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
     enhanceLiquidFlow();
     animateCounters();
     enhanceButtons();
-    animateBackground();
     addTitleAnimation();
     
     // Cursor trail effect
