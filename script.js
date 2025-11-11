@@ -231,6 +231,257 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     }
     
+    // Enhanced scroll reveal with intersection observer
+    function initAdvancedScrollAnimations() {
+        const animatedElements = document.querySelectorAll(
+            '.section-title, .solution-subtitle, .hero-subtitle'
+        );
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Add stagger effect for child elements
+                    const children = entry.target.querySelectorAll('.animate-child');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+    
+    // Dedicated roadmap timeline animation
+    function initRoadmapAnimations() {
+        const roadmapSection = document.querySelector('.roadmap');
+        const timeline = document.querySelector('.timeline');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const roadmapTitle = document.querySelector('.roadmap .section-title');
+        const roadmapSubtitle = document.querySelector('.roadmap .solution-subtitle');
+        
+        if (!roadmapSection || !timeline || !timelineItems.length) return;
+        
+        // Observer for roadmap section entry
+        const roadmapObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate title and subtitle first
+                    setTimeout(() => {
+                        if (roadmapTitle) roadmapTitle.classList.add('visible');
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        if (roadmapSubtitle) roadmapSubtitle.classList.add('visible');
+                    }, 300);
+                    
+                    // Then animate the timeline line
+                    setTimeout(() => {
+                        timeline.classList.add('visible');
+                    }, 600);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observer for individual timeline items
+        const itemObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        // Observe the roadmap section
+        roadmapObserver.observe(roadmapSection);
+        
+        // Observe each timeline item
+        timelineItems.forEach(item => {
+            itemObserver.observe(item);
+        });
+        
+        // Add mouse interaction for timeline items
+        timelineItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateX(0) translateY(-5px) scale(1.02)';
+                item.style.zIndex = '10';
+                
+                const badge = item.querySelector('.timeline-badge');
+                if (badge) {
+                    badge.style.transform = 'scale(1.1) rotate(0deg)';
+                }
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateX(0) translateY(0) scale(1)';
+                item.style.zIndex = '';
+                
+                const badge = item.querySelector('.timeline-badge');
+                if (badge) {
+                    badge.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+    }
+    
+    // Magnetic button effect
+    function initMagneticButtons() {
+        const magneticButtons = document.querySelectorAll('.btn');
+        
+        magneticButtons.forEach(button => {
+            button.addEventListener('mousemove', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = '';
+            });
+        });
+    }
+    
+    // Create background particle effect
+    function createParticleBackground() {
+        const particleContainer = document.createElement('div');
+        particleContainer.className = 'particle-container';
+        particleContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        `;
+        
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: absolute;
+                width: ${Math.random() * 6 + 2}px;
+                height: ${Math.random() * 6 + 2}px;
+                background: rgba(139, 92, 246, ${Math.random() * 0.5 + 0.1});
+                border-radius: 50%;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: particleFloat ${Math.random() * 10 + 20}s linear infinite;
+            `;
+            particleContainer.appendChild(particle);
+        }
+        
+        document.body.appendChild(particleContainer);
+        
+        // Add particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particleFloat {
+                from {
+                    transform: translateY(0) translateX(0);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 1;
+                }
+                90% {
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Smooth section transitions
+    function initSmoothSectionTransitions() {
+        const sections = document.querySelectorAll('section');
+        
+        sections.forEach((section, index) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            
+            setTimeout(() => {
+                section.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    }
+    
+    // Icon glow effect on hover
+    function addIconGlowEffect() {
+        const icons = document.querySelectorAll('.problem-icon, .solution-icon, .limitation-icon, .audience-icon');
+        
+        icons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.filter = 'drop-shadow(0 0 40px rgba(139, 92, 246, 1))';
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            
+            icon.addEventListener('mouseleave', () => {
+                icon.style.filter = '';
+                icon.style.transform = '';
+            });
+        });
+    }
+    
+    // Dynamic gradient background
+    function initDynamicGradient() {
+        let mouseX = 0;
+        let mouseY = 0;
+        let currentX = 0;
+        let currentY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX / window.innerWidth;
+            mouseY = e.clientY / window.innerHeight;
+        });
+        
+        function updateGradient() {
+            currentX += (mouseX - currentX) * 0.05;
+            currentY += (mouseY - currentY) * 0.05;
+            
+            const gradientX = currentX * 50 + 25;
+            const gradientY = currentY * 50 + 25;
+            
+            document.body.style.background = `
+                linear-gradient(135deg, 
+                    #0f0f23 0%, 
+                    #1a1a3e ${gradientX}%, 
+                    #2d1b69 50%, 
+                    #4c1d95 ${gradientY}%, 
+                    #7c3aed 100%)
+            `;
+            
+            requestAnimationFrame(updateGradient);
+        }
+        
+        updateGradient();
+    }
+    
     // Initialize all effects
     initParallax();
     init3DTilt();
@@ -240,6 +491,17 @@ document.addEventListener('DOMContentLoaded', function() {
     animateCounters();
     enhanceButtons();
     addTitleAnimation();
+    initAdvancedScrollAnimations();
+    initRoadmapAnimations();
+    initMagneticButtons();
+    createParticleBackground();
+    initSmoothSectionTransitions();
+    addIconGlowEffect();
+    
+    // Only init certain effects on desktop
+    if (window.innerWidth > 768) {
+        initDynamicGradient();
+    }
     
     // Cursor trail effect
     function initCursorTrail() {
@@ -293,4 +555,26 @@ document.addEventListener('DOMContentLoaded', function() {
 // Performance optimization: Disable animations on slower devices
 if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
     document.documentElement.style.setProperty('--animation-duration', '0s');
+}
+
+// Smooth scroll behavior
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Reduce animations on prefers-reduced-motion
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.style.setProperty('--animation-duration', '0.01s');
+    document.querySelectorAll('[data-parallax]').forEach(el => {
+        el.removeAttribute('data-parallax');
+    });
 }

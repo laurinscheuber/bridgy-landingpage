@@ -10,4 +10,364 @@
     grid-template-columns: 1fr !important;
   }
 }
-</style></head> <body>  <header> <section class="hero"> <div class="container"> <div class="hero-content"> <h1 class="hero-title">Bridgy: Design-to-Code Automation Plugin</h1> <p class="hero-subtitle">Currently in beta development as a university project. Automate Figma variable exports, generate component tests, and integrate with GitLab. Full roadmap delivery by March 2026.</p> <div class="hero-buttons"> <a href="https://www.figma.com/community/plugin/1567565193447398652/bridgy" class="btn btn-primary" rel="noopener noreferrer" target="_blank">Try Beta Version</a> <a href="https://github.com/laurinscheuber/Bridgy-Plugin" class="btn btn-secondary" rel="noopener noreferrer" target="_blank">View on GitHub</a> </div> </div> </div> </section> </header> <main> <section class="problem"> <div class="container"> <h2 class="section-title">The Real Problem: Design-Code Drift</h2> <div class="problem-grid"> <div class="problem-item glass-morph"> <div class="problem-icon">⌨️</div> <h3>Manual Import Hell</h3> <p>Copy-pasting design tokens one by one from Figma to CSS. Typos in hex codes, wrong spacing values, inconsistent naming. Each manual step is a potential error.</p> </div> <div class="problem-item glass-morph"> <div class="problem-icon">⏱️</div> <h3>Massive Setup Time</h3> <p>Hours spent setting up design systems in code. Creating CSS variables, configuring build tools, establishing naming conventions. Repeated for every project.</p> </div> <div class="problem-item glass-morph"> <div class="problem-icon">🎯</div> <h3>Silent Drift Detection</h3> <p>Existing codebases where design and code weren't synced for months. Small differences compound over time - is that button still the right color? Are spacing values correct?</p> </div> </div> </div> </section> <section class="solution"> <div class="container"> <h2 class="section-title">How Bridgy Solves This</h2> <p class="solution-subtitle">Direct automation from Figma to your codebase - no manual work required.</p> <div class="solution-grid"> <div class="solution-item glass-morph" data-tilt> <div class="solution-icon gradient-icon">⚡</div> <h3>Zero Manual Export</h3> <p>One-click export from Figma variables to production-ready CSS/SCSS. Supports multi-mode variables (light/dark themes) with automatic [data-theme="..."] selectors. No copy-pasting, no typos, no missed updates.</p> <div class="tech-stack">Smart validation • CSS/SCSS export • Multi-mode themes</div> </div> <div class="solution-item glass-morph" data-tilt> <div class="solution-icon gradient-icon">🎯</div> <h3>Instant Drift Detection</h3> <p>Generate unit tests that compare your existing components with current Figma designs. Perfect for legacy projects where design-code sync was lost.</p> <div class="tech-stack">Automated testing • IDE integration</div> </div> <div class="solution-item glass-morph" data-tilt> <div class="solution-icon gradient-icon">🔄</div> <h3>Continuous Synchronization</h3> <p>GitLab integration automatically updates your codebase when designs change. Design system stays in sync without developer intervention.</p> <div class="tech-stack">Git automation • Real-time sync</div> </div> <div class="solution-item glass-morph" data-tilt> <div class="solution-icon gradient-icon">🛡️</div> <h3>Quality Assurance</h3> <p>Built-in validation prevents inconsistent variable structures. Maintains clean, scalable design token architecture.</p> <div class="tech-stack">Structure validation • Best practices</div> </div> <div class="solution-item glass-morph" data-tilt> <div class="solution-icon gradient-icon">🔍</div> <h3>Component Browser</h3> <p>Navigate and explore your design system components visually. Search, filter, and jump directly to components across pages. Perfect for understanding your design system structure.</p> <div class="tech-stack">Visual navigation • Cross-page search • Component hierarchy</div> </div> </div> </div> </section> <section class="target-audience"> <div class="container"> <h2 class="section-title">Who Is Bridgy For?</h2> <div class="audience-grid"> <div class="audience-item glass-morph"> <div class="audience-icon">👩‍🎨</div> <h3>Designers</h3> <p>Tired of developers asking "what's the exact spacing?" or seeing your carefully crafted design system implemented inconsistently. Take control with automated exports.</p> <ul> <li>Maintain design system integrity</li> <li>Eliminate manual handoff errors</li> <li>See real implementation status</li> </ul> </div> <div class="audience-item glass-morph"> <div class="audience-icon">👨‍💻</div> <h3>Frontend Developers</h3> <p>Stop manually copying design tokens and wondering if your implementation matches the design. Focus on functionality while Bridgy handles design consistency.</p> <ul> <li>Automated token synchronization</li> <li>Unit tests for design compliance</li> <li>Legacy codebase auditing</li> </ul> </div> </div> </div> </section> <section class="roadmap"> <div class="container"> <h2 class="section-title">Development Roadmap</h2> <p class="solution-subtitle">University project timeline: Full feature delivery by March 2026</p> <div class="timeline"> <div class="timeline-item"> <div class="timeline-badge current">✅</div> <div class="timeline-content"> <h3>Beta Phase (Current)</h3> <p>Variable validation, multi-format export (CSS/SCSS), multi-mode variable support (light/dark themes), component testing, component browser, GitLab integration, GitHub feedback system</p> <span class="timeline-date">Now - Dec 2024</span> </div> </div> <div class="timeline-item"> <div class="timeline-badge future">🎯</div> <div class="timeline-content"> <h3>Design System Guidance</h3> <p>Direct feedback and improvement suggestions within the plugin. Help designers create perfect design system foundations regardless of experience level.</p> <span class="timeline-date">Nov - Dec 2025</span> </div> </div> <div class="timeline-item"> <div class="timeline-badge future">⚡</div> <div class="timeline-content"> <h3>Enhanced Export & Versioning</h3> <p>Tailwind CSS support, framework-specific exports, reverse import from existing codebases, GitHub integration, additional version control systems.</p> <span class="timeline-date">Dec 2025 - Jan 2026</span> </div> </div> <div class="timeline-item"> <div class="timeline-badge future">🚀</div> <div class="timeline-content"> <h3>Component Generation</h3> <p>Direct skeleton generation for React, Angular, and Vue components. Perfect for greenfield projects with automatic styling implementation from Figma.</p> <span class="timeline-date">Jan - Mar 2026</span> </div> </div> </div> </div> </section> <section class="limitations"> <div class="container"> <h2 class="section-title">Current Limitations (Beta)</h2> <p class="solution-subtitle">Transparency about what's not yet ready for production</p> <div class="limitation-grid"> <div class="limitation-item glass-morph"> <div class="limitation-icon">⚠️</div> <h3>Test Accuracy</h3> <p>Unit tests check Figma values, not live code variables. Tests become outdated when variables change without re-export from Figma.</p> </div> <div class="limitation-item glass-morph"> <div class="limitation-icon">🔧</div> <h3>Manual Setup Required</h3> <p>Component tests need minimal manual implementation on developer side. Not fully automated yet.</p> </div> <div class="limitation-item glass-morph"> <div class="limitation-icon">🎯</div> <h3>GitLab Only</h3> <p>Currently supports GitLab integration only. GitHub and other platforms coming in 2025 roadmap.</p> </div> </div> </div> </section> </main>  <footer class="footer"> <div class="container"> <div class="footer-content"> <div class="footer-links"> <a href="https://github.com/laurinscheuber/Bridgy-Plugin">GitHub</a> <a href="/privacy-policy.html">Privacy</a> </div> <p class="footer-text">© 2025 Bridgy by Lupica & Scheuber</p> </div> </div> </footer> <script src="/script.js"></script> </body> </html> 
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4), inset 0 1px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(139, 92, 246, 0.6), inset 0 1px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-title {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Smooth entrance animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animations for grids */
+.problem-item, .solution-item, .limitation-item {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.problem-item:nth-child(1) { animation-delay: 0.1s; }
+.problem-item:nth-child(2) { animation-delay: 0.2s; }
+.problem-item:nth-child(3) { animation-delay: 0.3s; }
+
+.solution-item:nth-child(1) { animation-delay: 0.1s; }
+.solution-item:nth-child(2) { animation-delay: 0.15s; }
+.solution-item:nth-child(3) { animation-delay: 0.2s; }
+.solution-item:nth-child(4) { animation-delay: 0.25s; }
+.solution-item:nth-child(5) { animation-delay: 0.3s; }
+
+/* Enhanced hover effects */
+.glass-morph {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-morph::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg) translate(-50%, -50%);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+.glass-morph:hover::before {
+  animation: shimmer 0.6s ease-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(45deg) translate(-200%, -200%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translate(200%, 200%);
+    opacity: 0;
+  }
+}
+
+/* Gentle floating animation for icons */
+.problem-icon, .gradient-icon, .limitation-icon, .audience-icon {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.problem-item:nth-child(2) .problem-icon { animation-delay: 1s; }
+.problem-item:nth-child(3) .problem-icon { animation-delay: 2s; }
+.solution-item:nth-child(2) .gradient-icon { animation-delay: 1.5s; }
+.solution-item:nth-child(3) .gradient-icon { animation-delay: 2.5s; }
+.solution-item:nth-child(4) .gradient-icon { animation-delay: 3s; }
+.solution-item:nth-child(5) .gradient-icon { animation-delay: 3.5s; }
+
+/* Parallax layers */
+.parallax-slow { transform: translateY(0); transition: transform 0.1s ease-out; }
+.parallax-medium { transform: translateY(0); transition: transform 0.1s ease-out; }
+.parallax-fast { transform: translateY(0); transition: transform 0.1s ease-out; }
+
+/* Timeline enhancements */
+.timeline {
+  position: relative;
+}
+
+.timeline:before {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 1px;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.4), rgba(139, 92, 246, 0.2));
+}
+
+.timeline.visible:before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-80px) translateY(30px) scale(0.8);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform, opacity;
+}
+
+.timeline-item:nth-child(even) {
+  transform: translateX(80px) translateY(30px) scale(0.8);
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+.timeline-item:nth-child(1).visible { transition-delay: 0.1s; }
+.timeline-item:nth-child(2).visible { transition-delay: 0.2s; }
+.timeline-item:nth-child(3).visible { transition-delay: 0.3s; }
+.timeline-item:nth-child(4).visible { transition-delay: 0.4s; }
+
+.timeline-badge {
+  opacity: 0;
+  transform: scale(0) rotate(180deg);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  will-change: transform, opacity;
+}
+
+.timeline-item.visible .timeline-badge {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  transition-delay: 0.3s;
+}
+
+.timeline-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.timeline-item.visible .timeline-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+/* Enhanced roadmap section */
+.roadmap {
+  overflow: hidden;
+}
+
+.roadmap .section-title {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.roadmap .section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roadmap .solution-subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.2s;
+}
+
+.roadmap .solution-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge pulse animation - only after visible */
+.timeline-item.visible .timeline-badge {
+  animation: glowPulse 2s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+/* Improve timeline date contrast */
+.timeline-date {
+  color: #e0e7ff !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  backdrop-filter: blur(10px);
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Tech stack tags animation */
+.tech-stack {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tech-stack:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Button enhancements */
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Section title animation */
+.section-title {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Parallax background shapes */
+.parallax-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1));
+  filter: blur(40px);
+  animation: floatShape 20s ease-in-out infinite;
+}
+
+@keyframes floatShape {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+</style></head> <body><!-- Parallax background shapes -->
+<div class="parallax-shapes">
+  <div class="shape" style="width: 300px; height: 300px; top: 10%; left: -5%; animation-delay: 0s;"></div>
+  <div class="shape" style="width: 200px; height: 200px; top: 60%; right: -10%; animation-delay: 5s;"></div>
+  <div class="shape" style="width: 400px; height: 400px; bottom: 10%; left: 50%; animation-delay: 10s;"></div>
+</div>  <header> <section class="hero"> <div class="container"> <div class="hero-content"> <h1 class="hero-title">Bridgy: Design-to-Code Automation Plugin</h1> <p class="hero-subtitle">Currently in beta development as a university project. Automate Figma variable exports, generate component tests, and integrate with GitLab. Full roadmap delivery by March 2026.</p> <div class="hero-buttons"> <a href="https://www.figma.com/community/plugin/1567565193447398652/bridgy" class="btn btn-primary" rel="noopener noreferrer" target="_blank">Try Beta Version</a> <a href="https://github.com/laurinscheuber/Bridgy-Plugin" class="btn btn-secondary" rel="noopener noreferrer" target="_blank">View on GitHub</a> </div> </div> </div> </section> </header> <main> <section class="problem"> <div class="container"> <h2 class="section-title">The Real Problem: Design-Code Drift</h2> <div class="problem-grid"> <div class="problem-item glass-morph parallax-medium" data-parallax="0.3"> <div class="problem-icon">⌨️</div> <h3>Manual Import Hell</h3> <p>Copy-pasting design tokens one by one from Figma to CSS. Typos in hex codes, wrong spacing values, inconsistent naming. Each manual step is a potential error.</p> </div> <div class="problem-item glass-morph parallax-slow" data-parallax="0.2"> <div class="problem-icon">⏱️</div> <h3>Massive Setup Time</h3> <p>Hours spent setting up design systems in code. Creating CSS variables, configuring build tools, establishing naming conventions. Repeated for every project.</p> </div> <div class="problem-item glass-morph parallax-fast" data-parallax="0.4"> <div class="problem-icon">🎯</div> <h3>Silent Drift Detection</h3> <p>Existing codebases where design and code weren't synced for months. Small differences compound over time - is that button still the right color? Are spacing values correct?</p> </div> </div> </div> </section> <section class="solution"> <div class="container"> <h2 class="section-title">How Bridgy Solves This</h2> <p class="solution-subtitle">Direct automation from Figma to your codebase - no manual work required.</p> <div class="solution-grid"> <div class="solution-item glass-morph parallax-slow" data-tilt data-parallax="0.15"> <div class="solution-icon gradient-icon">⚡</div> <h3>Zero Manual Export</h3> <p>One-click export from Figma variables to production-ready CSS/SCSS. Supports multi-mode variables (light/dark themes) with automatic [data-theme="..."] selectors. No copy-pasting, no typos, no missed updates.</p> <div class="tech-stack">Smart validation • CSS/SCSS export • Multi-mode themes</div> </div> <div class="solution-item glass-morph parallax-medium" data-tilt data-parallax="0.25"> <div class="solution-icon gradient-icon">🎯</div> <h3>Instant Drift Detection</h3> <p>Generate unit tests that compare your existing components with current Figma designs. Perfect for legacy projects where design-code sync was lost.</p> <div class="tech-stack">Automated testing • IDE integration</div> </div> <div class="solution-item glass-morph parallax-fast" data-tilt data-parallax="0.35"> <div class="solution-icon gradient-icon">🔄</div> <h3>Continuous Synchronization</h3> <p>GitLab integration automatically updates your codebase when designs change. Design system stays in sync without developer intervention.</p> <div class="tech-stack">Git automation • Real-time sync</div> </div> <div class="solution-item glass-morph parallax-slow" data-tilt data-parallax="0.2"> <div class="solution-icon gradient-icon">🛡️</div> <h3>Quality Assurance</h3> <p>Built-in validation prevents inconsistent variable structures. Maintains clean, scalable design token architecture.</p> <div class="tech-stack">Structure validation • Best practices</div> </div> <div class="solution-item glass-morph parallax-medium" data-tilt data-parallax="0.3"> <div class="solution-icon gradient-icon">🔍</div> <h3>Component Browser</h3> <p>Navigate and explore your design system components visually. Search, filter, and jump directly to components across pages. Perfect for understanding your design system structure.</p> <div class="tech-stack">Visual navigation • Cross-page search • Component hierarchy</div> </div> </div> </div> </section> <section class="target-audience"> <div class="container"> <h2 class="section-title">Who Is Bridgy For?</h2> <div class="audience-grid"> <div class="audience-item glass-morph parallax-medium" data-parallax="0.25"> <div class="audience-icon">👩‍🎨</div> <h3>Designers</h3> <p>Tired of developers asking "what's the exact spacing?" or seeing your carefully crafted design system implemented inconsistently. Take control with automated exports.</p> <ul> <li>Maintain design system integrity</li> <li>Eliminate manual handoff errors</li> <li>See real implementation status</li> </ul> </div> <div class="audience-item glass-morph parallax-fast" data-parallax="0.35"> <div class="audience-icon">👨‍💻</div> <h3>Frontend Developers</h3> <p>Stop manually copying design tokens and wondering if your implementation matches the design. Focus on functionality while Bridgy handles design consistency.</p> <ul> <li>Automated token synchronization</li> <li>Unit tests for design compliance</li> <li>Legacy codebase auditing</li> </ul> </div> </div> </div> </section> <section class="roadmap"> <div class="container"> <h2 class="section-title">Development Roadmap</h2> <p class="solution-subtitle">University project timeline: Full feature delivery by March 2026</p> <div class="timeline"> <div class="timeline-item"> <div class="timeline-badge current">✅</div> <div class="timeline-content"> <h3>Beta Phase (Current)</h3> <p>Variable validation, multi-format export (CSS/SCSS), multi-mode variable support (light/dark themes), component testing, component browser, GitLab integration, GitHub feedback system</p> <span class="timeline-date">Now - Dec 2024</span> </div> </div> <div class="timeline-item"> <div class="timeline-badge future">🎯</div> <div class="timeline-content"> <h3>Design System Guidance</h3> <p>Direct feedback and improvement suggestions within the plugin. Help designers create perfect design system foundations regardless of experience level.</p> <span class="timeline-date">Nov - Dec 2025</span> </div> </div> <div class="timeline-item"> <div class="timeline-badge future">⚡</div> <div class="timeline-content"> <h3>Enhanced Export & Versioning</h3> <p>Tailwind CSS support, framework-specific exports, reverse import from existing codebases, GitHub integration, additional version control systems.</p> <span class="timeline-date">Dec 2025 - Jan 2026</span> </div> </div> <div class="timeline-item"> <div class="timeline-badge future">🚀</div> <div class="timeline-content"> <h3>Component Generation</h3> <p>Direct skeleton generation for React, Angular, and Vue components. Perfect for greenfield projects with automatic styling implementation from Figma.</p> <span class="timeline-date">Jan - Mar 2026</span> </div> </div> </div> </div> </section> <section class="limitations"> <div class="container"> <h2 class="section-title">Current Limitations (Beta)</h2> <p class="solution-subtitle">Transparency about what's not yet ready for production</p> <div class="limitation-grid"> <div class="limitation-item glass-morph parallax-slow" data-parallax="0.2"> <div class="limitation-icon">⚠️</div> <h3>Test Accuracy</h3> <p>Unit tests check Figma values, not live code variables. Tests become outdated when variables change without re-export from Figma.</p> </div> <div class="limitation-item glass-morph parallax-medium" data-parallax="0.3"> <div class="limitation-icon">🔧</div> <h3>Manual Setup Required</h3> <p>Component tests need minimal manual implementation on developer side. Not fully automated yet.</p> </div> <div class="limitation-item glass-morph parallax-fast" data-parallax="0.4"> <div class="limitation-icon">🎯</div> <h3>GitLab Only</h3> <p>Currently supports GitLab integration only. GitHub and other platforms coming in 2025 roadmap.</p> </div> </div> </div> </section> </main>  <footer class="footer"> <div class="container"> <div class="footer-content"> <div class="footer-links"> <a href="https://github.com/laurinscheuber/Bridgy-Plugin">GitHub</a> <a href="/privacy-policy.html">Privacy</a> </div> <p class="footer-text">© 2025 Bridgy by Lupica & Scheuber</p> </div> </div> </footer> <script src="/script.js"></script> </body> </html> 
